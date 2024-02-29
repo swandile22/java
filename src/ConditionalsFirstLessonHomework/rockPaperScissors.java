@@ -14,6 +14,9 @@ public class rockPaperScissors {
         Scanner input = new Scanner(System.in);
         int userInput = input.nextInt();
 
+        if (userInput < 1 || userInput > 3){
+            System.out.println("Invalid value");return;
+        }
         if (userInput == newRandomNum) {
             System.out.println("Computer chose: " + newRandomNum);
             System.out.println("It's a tie!");
