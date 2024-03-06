@@ -19,7 +19,12 @@ public class rockPaperScissors {
 
     public static void main(String[] args) {
 
-//      Random number
+        rockPaperScissorsProg();
+    }
+
+    private static void rockPaperScissorsProg() {
+
+        //      Random number
         double randomNum = Math.floor(Math.random() * 3 + 1); // Creates random number that is >= 1 but <= 3
         int newRandomNum = (int) randomNum; // stores generated random number inside newRandomNum variable
 
