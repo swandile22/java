@@ -44,6 +44,7 @@ public class averageNumber {
         positiveNUm(numbersList); // calls function
     }
 
+
     private static double averageSum(ArrayList<Integer> numbersList) {
 
         int arrayLength = numbersList.size(); // stores the number of items in an array list into the arrayLength var
