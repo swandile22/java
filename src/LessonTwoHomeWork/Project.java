@@ -75,9 +75,9 @@ public class Project {
         output += "\nBuilding Type:" + " " + building;
         output += "\nProject Address:" + " " + address;
         output += "\nERF Number:" + " " + ERF;
-        output += "\nTotal Charge Fee:" + " " + totalCharge;
+        output += "\nTotal Charge Fee:" + " " + "R" + totalCharge;
         output += "\nAmount Paid to Date:" + " " + "R" +paidToDate;
-        output += "\nProject Deadline:" + " " + "R" + deadline;
+        output += "\nProject Deadline:" + " " + deadline;
         output += "\n***********************************";
         return output;
 
