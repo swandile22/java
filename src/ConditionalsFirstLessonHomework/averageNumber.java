@@ -1,23 +1,23 @@
 /*
-* ArrayList<Type> name = new ArrayList<Type>() - [Class]this is used to create a new array list
-*
-* Scanner input = new Scanner(System.in) - [Class]this is created to take in a user input using(System.in)
-*
-* int userInput = input.nextInt() - declares the user input in a variable
-*
-* break - Often used in loops, this is used to terminate a loop and move on to the code following the loop
-*
-* .add - a method used to add data into a Set or an Array
-*
-* double - is a datatype that has decimal values and is used in fractional calculations
-*
-* .size(); - is a method that determines the number of items inside an Array List
-*
-* += - it is a compound assignment  operator. most commonly used for incrementing the value of a variable since x++
-* increments the value by 1(so x += y is the same as x = x + y)
-*
-*.get(i); - is a method of an ArrayList in Java which is used to get the element of a specified index within the list.
-* */
+ * ArrayList<Type> name = new ArrayList<Type>() - [Class]this is used to create a new array list
+ *
+ * Scanner input = new Scanner(System.in) - [Class]this is created to take in a user input using(System.in)
+ *
+ * int userInput = input.nextInt() - declares the user input in a variable
+ *
+ * break - Often used in loops, this is used to terminate a loop and move on to the code following the loop
+ *
+ * .add - a method used to add data into a Set or an Array
+ *
+ * double - is a datatype that has decimal values and is used in fractional calculations
+ *
+ * .size(); - is a method that determines the number of items inside an Array List
+ *
+ * += - it is a compound assignment  operator. most commonly used for incrementing the value of a variable since x++
+ * increments the value by 1(so x += y is the same as x = x + y)
+ *
+ *.get(i); - is a method of an ArrayList in Java which is used to get the element of a specified index within the list.
+ * */
 
 package ConditionalsFirstLessonHomework;
 
@@ -29,9 +29,11 @@ public class averageNumber {
 
 
         ArrayList<Integer> numbersList = new ArrayList<>(); // creates an array list named numbersList
+
         while (true) {
             Scanner input = new Scanner(System.in); // creates an input for the user
             int userInput = input.nextInt(); // stores the input into a variable
+
             if (userInput == 0) {
                 break; // if the user input zero than it terminates and moves on to the next code
             }
@@ -39,7 +41,7 @@ public class averageNumber {
             numbersList.add(userInput); // adds user input into an array list
         }
 
-        averageSum(numbersList); // calls function
+        System.out.println("your average is: " + averageSum(numbersList));
         negativeNum(numbersList); // calls function
         positiveNUm(numbersList); // calls function
     }
@@ -53,9 +55,7 @@ public class averageNumber {
             sum += numbersList.get(i); // adds all numbers inside the array and stores the total in sum
         }
 
-        double average = (double) sum / arrayLength; // divides the total by the number of items in the Array
-        System.out.println("your average is: " + average);
-        return average;
+        return (double) sum / arrayLength;
     }
 
     private static ArrayList<Integer> negativeNum(ArrayList<Integer> numbersList) {
