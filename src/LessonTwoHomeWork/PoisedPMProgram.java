@@ -1,24 +1,36 @@
 package LessonTwoHomeWork;
 
 import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class PoisedPMProgram {
 
     public static void main(String[] args) {
 
-        BigDecimal totalChargeFee = new BigDecimal(9200000.00);
-        BigDecimal amountPaidToDate = new BigDecimal(6200000.00);
+
+
+        System.out.println("please enter your project number, project name");
+
+        Scanner input = new Scanner(System.in);
+        int projectNumber = input.nextInt();
+        String projectName = input.nextLine();
+        String building = input.nextLine();
+        String address = input.nextLine();
+        int ERFNumber = input.nextInt();
+        BigDecimal totalChargeFee = input.nextBigDecimal();
+        BigDecimal amountPaidToDate = input.nextBigDecimal();
+        String deadline = input.nextLine();
+
 
         Project phalaPhala = new Project(
-                123456789,
-                "Project Phala phala",
-                "Mine",
-                "22 le ema pedini",
-                4596,
+                projectNumber,
+                projectName,
+                building,
+                address,
+                ERFNumber,
                 totalChargeFee,
                 amountPaidToDate,
-                "32 May 2024"
-
+                deadline
         );
 
         System.out.println(phalaPhala);
