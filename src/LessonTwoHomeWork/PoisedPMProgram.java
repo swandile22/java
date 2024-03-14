@@ -12,7 +12,7 @@ public class PoisedPMProgram {
         System.out.println("please enter the following project information," +
                 " " + "Type " + "done" + " " + "to finish.");
 
-        Project phalaPhala = null;
+        Project clearWater = null;
 
         while (true) {
 
@@ -39,7 +39,7 @@ public class PoisedPMProgram {
 
 
             if (userInput.equalsIgnoreCase("done")) {
-                phalaPhala = new Project(projectNumber,
+                clearWater = new Project(projectNumber,
                         projectName,
                         building,
                         address,
@@ -52,7 +52,6 @@ public class PoisedPMProgram {
             }
         }
 
-        System.out.println("Enter your project number to view the project details");
-        System.out.println(phalaPhala);
+        System.out.println(clearWater);
     }
 }
