@@ -2,86 +2,142 @@ package LessonTwoHomeWork;
 
 
 import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class Project {
 
-    private int number;
+    private int projectNumber;
 
-    private String name;
+    private String projectName;
 
-    private String building;
+    private String buildingType;
 
-    private String address;
+    private String projectAddress;
 
-    private int ERF;
+    private int ERFNumber;
 
-    private BigDecimal totalCharge;
+    private BigDecimal totalChargeFee;
 
-    private BigDecimal paidToDate;
+    private BigDecimal amountPaidToDate;
 
-    private String deadline;
+    private String projectDeadline;
 
 
-    public Project(int number, String name, String building, String address,
-                   int ERF, BigDecimal totalCharge, BigDecimal paidToDate, String deadline) {
-        this.number = number;
-        this.name = name;
-        this.building = building;
-        this.address = address;
-        this.ERF = ERF;
-        this.totalCharge = totalCharge;
-        this.paidToDate = paidToDate;
-        this.deadline = deadline;
+    public Project(int projectNumber, String projectName, String buildingType, String projectAddress,
+                   int ERFNumber, BigDecimal totalChargeFee, BigDecimal amountPaidToDate, String projectDeadline) {
+        this.projectNumber = projectNumber;
+        this.projectName = projectName;
+        this.buildingType = buildingType;
+        this.projectAddress = projectAddress;
+        this.ERFNumber = ERFNumber;
+        this.totalChargeFee = totalChargeFee;
+        this.amountPaidToDate = amountPaidToDate;
+        this.projectDeadline = projectDeadline;
+    }
+
+    public Project() {
+
     }
 
 
-    public int getNumber() { return number;}
-    public void setNumber(int number) { this.number = number;}
+    public int getProjectNumber() { return projectNumber;}
+    public void setProjectNumber(int projectNumber) { this.projectNumber = projectNumber;}
 
 
-    public String getName() { return name;}
-    public void setName(String name) { this.name = name;}
+    public String getProjectName() { return projectName;}
+    public void setProjectName(String projectName) { this.projectName = projectName;}
 
 
-    public String getBuilding() { return building;}
-    public void setBuilding(String building) { this.building = building;}
+    public String getBuildingType() { return buildingType;}
+    public void setBuildingType(String buildingType) { this.buildingType = buildingType;}
 
 
-    public String getAddress() { return address;}
-    public void setAddress(String address) { this.address = address;}
+    public String getProjectAddress() { return projectAddress;}
+    public void setProjectAddress(String projectAddress) { this.projectAddress = projectAddress;}
 
 
-    public int getERF() { return ERF;}
-    public void setERF(int ERF) { this.ERF = ERF;}
+    public int getERFNumber() { return ERFNumber;}
+    public void setERFNumber(int ERFNumber) { this.ERFNumber = ERFNumber;}
 
 
-    public BigDecimal getTotalCharge() { return totalCharge;}
-    public void setTotalCharge(BigDecimal totalCharge) { this.totalCharge = totalCharge;}
+    public BigDecimal getTotalChargeFee() { return totalChargeFee;}
+    public void setTotalChargeFee(BigDecimal totalChargeFee) { this.totalChargeFee = totalChargeFee;}
 
 
-    public BigDecimal getPaidToDate() { return paidToDate;}
-    public void setPaidToDate(BigDecimal paidToDate) { this.paidToDate = paidToDate;}
+    public BigDecimal getAmountPaidToDate() { return amountPaidToDate;}
+    public void setAmountPaidToDate(BigDecimal amountPaidToDate) { this.amountPaidToDate = amountPaidToDate;}
 
 
-    public String getDeadline() { return deadline;}
-    public void setDeadline(String deadline) { this.deadline = deadline;}
+    public String getProjectDeadline() { return projectDeadline;}
+    public void setProjectDeadline(String projectDeadline) { this.projectDeadline = projectDeadline;}
 
 
 
     @Override
     public String toString() {
         String output = "***********************************";
-        output += "\nProject Number:" + " " + number;
-        output += "\nProject Name:" + " " + name;
-        output += "\nBuilding Type:" + " " + building;
-        output += "\nProject Address:" + " " + address;
-        output += "\nERF Number:" + " " + ERF;
-        output += "\nTotal Charge Fee:" + " " + "R" + totalCharge;
-        output += "\nAmount Paid to Date:" + " " + "R" +paidToDate;
-        output += "\nProject Deadline:" + " " + deadline;
+//        output += "\nProject Number:" + " " + projectNumber;
+//        output += "\nProject Name:" + " " + projectName;
+//        output += "\nBuilding Type:" + " " + buildingType;
+//        output += "\nProject Address:" + " " + projectAddress;
+//        output += "\nERF Number:" + " " + ERFNumber;
+//        output += "\nTotal Charge Fee:" + " " + "R" + totalChargeFee;
+//        output += "\nAmount Paid to Date:" + " " + "R" + amountPaidToDate;
+//        output += "\nProject Deadline:" + " " + projectDeadline;
+        output += "\nYour Project information has been stored";
         output += "\n***********************************";
         return output;
 
+    }
+
+
+    public Project projectFunction() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("please enter the following project information," +
+                " " + "Type " + "done" + " " + "to finish.");
+
+        Project clearWater = null;
+
+        while (true) {
+
+            System.out.print("Project number: ");
+            int projectNumber = input.nextInt();
+            input.nextLine();
+            System.out.print("Project name: ");
+            String projectName = input.nextLine();
+            System.out.print("Building type: ");
+            String buildingType = input.nextLine();
+            System.out.print("Address: ");
+            String projectAddress = input.nextLine();
+            System.out.print("ERF number: ");
+            int ERFNumber = input.nextInt();
+            System.out.print("Total charge fee: ");
+            BigDecimal totalChargeFee = input.nextBigDecimal();
+            System.out.print("Amount paid to date: ");
+            BigDecimal amountPaidToDate = input.nextBigDecimal();
+            input.nextLine();
+            System.out.print("Deadline: ");
+            String projectDeadline = input.nextLine();
+            System.out.print("Enter 'done' to finish or press Enter to continue: ");
+            String userInput = input.nextLine();
+
+
+            if (userInput.equalsIgnoreCase("done")) {
+               this.projectNumber = projectNumber;
+                        this.projectName = projectName;
+                        this.buildingType = buildingType;
+                        this.projectAddress = projectAddress;
+                        this.ERFNumber = ERFNumber;
+                        this.totalChargeFee = totalChargeFee;
+                        this.amountPaidToDate = amountPaidToDate;
+                        this.projectDeadline = projectDeadline;
+
+                break;
+            }
+        }
+
+        return clearWater;
     }
 
 }
