@@ -76,15 +76,14 @@ public class Project {
     @Override
     public String toString() {
         String output = "***********************************";
-//        output += "\nProject Number:" + " " + projectNumber;
-//        output += "\nProject Name:" + " " + projectName;
-//        output += "\nBuilding Type:" + " " + buildingType;
-//        output += "\nProject Address:" + " " + projectAddress;
-//        output += "\nERF Number:" + " " + ERFNumber;
-//        output += "\nTotal Charge Fee:" + " " + "R" + totalChargeFee;
-//        output += "\nAmount Paid to Date:" + " " + "R" + amountPaidToDate;
-//        output += "\nProject Deadline:" + " " + projectDeadline;
-        output += "\nYour Project information has been stored";
+        output += "\nProject Number:" + " " + projectNumber;
+        output += "\nProject Name:" + " " + projectName;
+        output += "\nBuilding Type:" + " " + buildingType;
+        output += "\nProject Address:" + " " + projectAddress;
+        output += "\nERF Number:" + " " + ERFNumber;
+        output += "\nTotal Charge Fee:" + " " + "R" + totalChargeFee;
+        output += "\nAmount Paid to Date:" + " " + "R" + amountPaidToDate;
+        output += "\nProject Deadline:" + " " + projectDeadline;
         output += "\n***********************************";
         return output;
 

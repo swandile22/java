@@ -9,13 +9,19 @@ public class PoisedPMProgram {
     public static void main(String[] args) {
 
 
-        Project projectConstructor = new Project();
-        projectConstructor.projectFunction();
-        System.out.println(projectConstructor);
+//        Project projectConstructor = new Project();
+//        projectConstructor.projectFunction();
+//        System.out.println(projectConstructor);
 
         Person personConstructor = new Person();
         personConstructor.personFunction();
      System.out.println(personConstructor);
+
+
+
+//     if (personConstructor.getProjectNumber == "123456"){
+//         personConstructor.se
+//     }
     }
 
 

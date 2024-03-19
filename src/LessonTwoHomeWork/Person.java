@@ -99,28 +99,28 @@ public class Person {
     Person matthew = null;
 
         while (true) {
-            System.out.println("Role: ");
+            System.out.print("Role: ");
             String role = personInput.nextLine();
-            System.out.println(role + " " + "ID");
+            System.out.print(role + " " + "ID: ");
             String personId = personInput.nextLine();
 
-            System.out.println("Project Number: ");
+            System.out.print("Project Number: ");
             int projectNumber = personInput.nextInt();
             personInput.nextLine();
 
-            System.out.println("First Name: ");
+            System.out.print("First Name: ");
             String firstName = personInput.nextLine();
 
-            System.out.println("Last Name: ");
+            System.out.print("Last Name: ");
             String lastName = personInput.nextLine();
 
-            System.out.println("Contact Number: ");
+            System.out.print("Contact Number: ");
             String contactNumber = personInput.nextLine();
 
-            System.out.println("Email Address: ");
+            System.out.print("Email Address: ");
             String emailAddress = personInput.nextLine();
 
-            System.out.println("Physical Address: ");
+            System.out.print("Physical Address: ");
             String physicalAddress = personInput.nextLine();
 
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
@@ -135,6 +135,7 @@ public class Person {
                 this.contactNumber = contactNumber;
                 this.emailAddress = emailAddress;
                 this.physicalAddress = physicalAddress;
+                System.out.println("Your profile information has been stored");
 
                 break;
             }
@@ -142,21 +143,28 @@ public class Person {
 
         return matthew;
     }
+
+    public void setString(String newName) {
+        this.firstName = newName;
+    }
+
+
     @Override
     public String toString() {
         String personOutput = "*********************************";
-//        personOutput += "\nRole:" + " " + role;
-//        personOutput += "\nPerson ID:" + " " + personId;
-//        personOutput += "\nProject Number:" + " " + projectNumber;
-//        personOutput += "\nFirst Name:" + " " + firstName;
-//        personOutput += "\nLast Name:" + " " + lastName;
-//        personOutput += "\nContact Number:" + " " + contactNumber;
-//        personOutput += "\nEmail Address:" + " " + emailAddress;
-//        personOutput += "\nPhysical Address:" + " " + physicalAddress;
-        personOutput += "\nYour profile information has been stored";
+        personOutput += "\nRole:" + " " + role;
+        personOutput += "\nPerson ID:" + " " + personId;
+        personOutput += "\nProject Number:" + " " + projectNumber;
+        personOutput += "\nFirst Name:" + " " + firstName;
+        personOutput += "\nLast Name:" + " " + lastName;
+        personOutput += "\nContact Number:" + " " + contactNumber;
+        personOutput += "\nEmail Address:" + " " + emailAddress;
+        personOutput += "\nPhysical Address:" + " " + physicalAddress;
         personOutput += "\n*********************************";
         return personOutput;
     }
+
+
 
 }
 
