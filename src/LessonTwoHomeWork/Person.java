@@ -135,7 +135,6 @@ public class Person {
                 this.contactNumber = contactNumber;
                 this.emailAddress = emailAddress;
                 this.physicalAddress = physicalAddress;
-                System.out.println("Your profile information has been stored");
 
                 break;
             }
@@ -144,9 +143,7 @@ public class Person {
         return matthew;
     }
 
-    public void setString(String newName) {
-        this.firstName = newName;
-    }
+
 
 
     @Override
@@ -162,6 +159,10 @@ public class Person {
         personOutput += "\nPhysical Address:" + " " + physicalAddress;
         personOutput += "\n*********************************";
         return personOutput;
+    }
+
+    public void addLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 

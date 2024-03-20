@@ -45,7 +45,9 @@ public class Project {
 
 
     public String getProjectName() { return projectName;}
-    public void setProjectName(String projectName) { this.projectName = projectName;}
+    public String setProjectName(String projectName) { this.projectName = projectName;
+        return projectName;
+    }
 
 
     public String getBuildingType() { return buildingType;}
@@ -138,5 +140,39 @@ public class Project {
 
         return clearWater;
     }
+
+    public void repProjectNumber(int newProjectNumber) {
+        this.projectNumber = newProjectNumber;
+    }
+
+    public void repProjectName(String newProjectName) {
+        this.projectName = newProjectName;
+    }
+
+    public void repBuildingType(String newBuildingType) {
+        this.buildingType = newBuildingType;
+    }
+
+    public void repProjectAddress(String newProjectAddress) {
+        this.projectAddress = newProjectAddress;
+    }
+
+    public void repERFNumber(int newERFNumber) {
+        this.ERFNumber = newERFNumber;
+    }
+
+    public void repAmount(BigDecimal newTotalChargeFee, BigDecimal newAmountPaidToDate) {
+        this.totalChargeFee = newTotalChargeFee;
+        this.amountPaidToDate = newAmountPaidToDate;
+    }
+
+    public void repDeadline(String newDeadline) {
+        this.projectDeadline = newDeadline;
+    }
+
+    public void addProjectName(String projectName) {
+        this.projectName = "House";
+    }
+
 
 }
