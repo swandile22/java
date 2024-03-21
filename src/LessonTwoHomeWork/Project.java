@@ -1,7 +1,7 @@
 package LessonTwoHomeWork;
 
 
-import java.math.BigDecimal;
+
 import java.util.Scanner;
 
 public class Project {
@@ -16,15 +16,15 @@ public class Project {
 
     private int ERFNumber;
 
-    private BigDecimal totalChargeFee;
+    private double totalChargeFee;
 
-    private BigDecimal amountPaidToDate;
+    private double amountPaidToDate;
 
     private String projectDeadline;
 
 
     public Project(int projectNumber, String projectName, String buildingType, String projectAddress,
-                   int ERFNumber, BigDecimal totalChargeFee, BigDecimal amountPaidToDate, String projectDeadline) {
+                   int ERFNumber, double totalChargeFee, double amountPaidToDate, String projectDeadline) {
         this.projectNumber = projectNumber;
         this.projectName = projectName;
         this.buildingType = buildingType;
@@ -62,12 +62,12 @@ public class Project {
     public void setERFNumber(int ERFNumber) { this.ERFNumber = ERFNumber;}
 
 
-    public BigDecimal getTotalChargeFee() { return totalChargeFee;}
-    public void setTotalChargeFee(BigDecimal totalChargeFee) { this.totalChargeFee = totalChargeFee;}
+    public double getTotalChargeFee() { return totalChargeFee;}
+    public void setTotalChargeFee(double totalChargeFee) { this.totalChargeFee = totalChargeFee;}
 
 
-    public BigDecimal getAmountPaidToDate() { return amountPaidToDate;}
-    public void setAmountPaidToDate(BigDecimal amountPaidToDate) { this.amountPaidToDate = amountPaidToDate;}
+    public double getAmountPaidToDate() { return amountPaidToDate;}
+    public void setAmountPaidToDate(double amountPaidToDate) { this.amountPaidToDate = amountPaidToDate;}
 
 
     public String getProjectDeadline() { return projectDeadline;}
@@ -114,9 +114,9 @@ public class Project {
             System.out.print("ERF number: ");
             int ERFNumber = input.nextInt();
             System.out.print("Total charge fee: ");
-            BigDecimal totalChargeFee = input.nextBigDecimal();
+            double totalChargeFee = input.nextDouble();
             System.out.print("Amount paid to date: ");
-            BigDecimal amountPaidToDate = input.nextBigDecimal();
+            double amountPaidToDate = input.nextDouble();
             input.nextLine();
             System.out.print("Deadline: ");
             String projectDeadline = input.nextLine();
@@ -130,8 +130,8 @@ public class Project {
                         this.buildingType = buildingType;
                         this.projectAddress = projectAddress;
                         this.ERFNumber = ERFNumber;
-                        this.totalChargeFee = totalChargeFee;
-                        this.amountPaidToDate = amountPaidToDate;
+//                        this.totalChargeFee = totalChargeFee;
+//                        this.amountPaidToDate = amountPaidToDate;
                         this.projectDeadline = projectDeadline;
 
                 break;
@@ -161,7 +161,7 @@ public class Project {
         this.ERFNumber = newERFNumber;
     }
 
-    public void repAmount(BigDecimal newTotalChargeFee, BigDecimal newAmountPaidToDate) {
+    public void repAmount(double newTotalChargeFee, double newAmountPaidToDate) {
         this.totalChargeFee = newTotalChargeFee;
         this.amountPaidToDate = newAmountPaidToDate;
     }

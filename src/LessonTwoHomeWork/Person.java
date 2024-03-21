@@ -161,11 +161,6 @@ public class Person {
         return personOutput;
     }
 
-    public void addLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-
 
 }
 

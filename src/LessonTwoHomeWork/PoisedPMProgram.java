@@ -1,8 +1,10 @@
 package LessonTwoHomeWork;
 
 
-import java.math.BigDecimal;
+
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class PoisedPMProgram {
@@ -18,11 +20,12 @@ public class PoisedPMProgram {
         Scanner replace = new Scanner(System.in);
 
         System.out.print("Please confirm the Total Charge Fee: ");
-        BigDecimal replaceTotalChargeFee = replace.nextBigDecimal();
+        double replaceTotalChargeFee = replace.nextDouble();
         replace.nextLine();
         System.out.print("Please confirm the Amount Paid to Date: ");
-        BigDecimal replaceAmountPaidToDate = replace.nextBigDecimal();
+        double replaceAmountPaidToDate = replace.nextDouble();
 
+//        Updating Charge fee and Amount paid
         projectConstructor.repAmount(replaceTotalChargeFee, replaceAmountPaidToDate);
 
         Person personConstructor = new Person();
@@ -34,9 +37,26 @@ public class PoisedPMProgram {
             projectConstructor.setProjectName("House" + " " + personLastName);
         }
 
-        System.out.println(projectConstructor);
-        System.out.println(personConstructor);
-      }
+        double finalChargeFee = replaceTotalChargeFee;
+        double finalAmountPaid = replaceAmountPaidToDate;
+        double amountDue = finalChargeFee - finalAmountPaid;
 
+        if (amountDue > 0) {
+           try {
+               FileWriter projectInvoice = new FileWriter("project_" + projectConstructor.getProjectNumber() + "_invoice.txt");
+               projectInvoice.write(String.valueOf(projectConstructor));
+               projectInvoice.write(String.valueOf(personConstructor));
+               projectInvoice.write("The amount due is: R"+ amountDue);
+               projectInvoice.close();
+               System.out.println("Your invoice has been created");
+           } catch (IOException e) {
+               System.out.println("An error occurred");
+               e.printStackTrace();
+           }
 
-    }
+            }
+        else {
+            System.out.println("Project is finalised");
+        }
+        }
+        }
