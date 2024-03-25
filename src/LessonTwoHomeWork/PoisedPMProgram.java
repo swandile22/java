@@ -2,6 +2,7 @@ package LessonTwoHomeWork;
 
 
 
+import java.io.File;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -37,16 +38,19 @@ public class PoisedPMProgram {
             projectConstructor.setProjectName("House" + " " + personLastName);
         }
 
+//        Output to txt file
         double finalChargeFee = replaceTotalChargeFee;
         double finalAmountPaid = replaceAmountPaidToDate;
         double amountDue = finalChargeFee - finalAmountPaid;
+        int compareProjectNumber = projectConstructor.getProjectNumber();
+        int personProjectNumber = personConstructor.getPersonProjectNumber();
 
-        if (amountDue > 0) {
+        if ((amountDue > 0) && (personProjectNumber == compareProjectNumber )) {
            try {
-               FileWriter projectInvoice = new FileWriter("project_" + projectConstructor.getProjectNumber() + "_invoice.txt");
+               FileWriter projectInvoice = new FileWriter(new File("src/LessonTwoHomeWork/Invoices", "project_" + projectConstructor.getProjectNumber() + "_invoice.txt"));
                projectInvoice.write(String.valueOf(projectConstructor));
                projectInvoice.write(String.valueOf(personConstructor));
-               projectInvoice.write("The amount due is: R"+ amountDue);
+               projectInvoice.write(" The amount due is: R"+ amountDue);
                projectInvoice.close();
                System.out.println("Your invoice has been created");
            } catch (IOException e) {
@@ -55,8 +59,11 @@ public class PoisedPMProgram {
            }
 
             }
-        else {
+        else if (amountDue == 0) {
             System.out.println("Project is finalised");
         }
+
+
+
         }
         }

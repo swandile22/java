@@ -7,7 +7,7 @@ public class Person {
     private String role;
     private String personId;
 
-    private int projectNumber;
+    private int personProjectNumber;
 
     private String firstName;
 
@@ -19,10 +19,10 @@ public class Person {
 
     private String physicalAddress;
 
-    public Person(String role, String personId, int projectNumber, String firstName, String lastName, String contactNumber, String emailAddress, String physicalAddress) {
+    public Person(String role, String personId, int personProjectNumber, String firstName, String lastName, String contactNumber, String emailAddress, String physicalAddress) {
         this.role = role;
         this.personId = personId;
-        this.projectNumber = projectNumber;
+        this.personProjectNumber = personProjectNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactNumber = contactNumber;
@@ -43,12 +43,12 @@ public class Person {
         this.personId = newID;
     }
 
-    public int getProjectNumber() {
-        return this.projectNumber;
+    public int getPersonProjectNumber() {
+        return this.personProjectNumber;
     }
 
-    public void setProjectNumber(int newProjectNumber) {
-        this.projectNumber = newProjectNumber;
+    public void setPersonProjectNumber(int newPersonProjectNumber) {
+        this.personProjectNumber = newPersonProjectNumber;
     }
 
     public String getFirstName() {
@@ -105,7 +105,7 @@ public class Person {
             String personId = personInput.nextLine();
 
             System.out.print("Project Number: ");
-            int projectNumber = personInput.nextInt();
+            int personProjectNumber = personInput.nextInt();
             personInput.nextLine();
 
             System.out.print("First Name: ");
@@ -130,6 +130,7 @@ public class Person {
             if (personDone.equalsIgnoreCase("done")) {
                 this.role = role;
                 this.personId = personId;
+                this.personProjectNumber = personProjectNumber;
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.contactNumber = contactNumber;
@@ -151,7 +152,7 @@ public class Person {
         String personOutput = "*********************************";
         personOutput += "\nRole:" + " " + role;
         personOutput += "\nPerson ID:" + " " + personId;
-        personOutput += "\nProject Number:" + " " + projectNumber;
+        personOutput += "\nProject Number:" + " " + personProjectNumber;
         personOutput += "\nFirst Name:" + " " + firstName;
         personOutput += "\nLast Name:" + " " + lastName;
         personOutput += "\nContact Number:" + " " + contactNumber;
