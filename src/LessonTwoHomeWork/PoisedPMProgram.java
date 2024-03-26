@@ -39,9 +39,8 @@ public class PoisedPMProgram {
         }
 
 //        Output to txt file
-        double finalChargeFee = replaceTotalChargeFee;
-        double finalAmountPaid = replaceAmountPaidToDate;
-        double amountDue = finalChargeFee - finalAmountPaid;
+
+        double amountDue = replaceTotalChargeFee - replaceAmountPaidToDate;
         int compareProjectNumber = projectConstructor.getProjectNumber();
         int personProjectNumber = personConstructor.getPersonProjectNumber();
 
