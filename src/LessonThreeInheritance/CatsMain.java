@@ -1,7 +1,7 @@
 /*
-/With inheritance you,re able to use the constructors and methods of the parent class(Cats)
-in the children classes(Lion), It allows us to connect two classes to one another while adding different
-functionalities to a specific one.
+* With, inheritance you,re able to use the constructors and methods of the parent class(Cats)
+* in the children classes(Lion), It allows us to connect two classes to one another while adding different
+* functionalities to a specific one.
  */
 
 package LessonThreeInheritance;
