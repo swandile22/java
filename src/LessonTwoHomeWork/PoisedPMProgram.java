@@ -20,7 +20,7 @@ public class PoisedPMProgram {
 //        Updates Total Charge Fee and Amount Paid to date
         Scanner replace = new Scanner(System.in);
 
-        System.out.print("Please confirm the Total Charge Fee: ");
+        System.out.print("\n\nPlease confirm the Total Charge Fee: ");
         double replaceTotalChargeFee = replace.nextDouble();
         replace.nextLine();
         System.out.print("Please confirm the Amount Paid to Date: ");
@@ -43,8 +43,9 @@ public class PoisedPMProgram {
         double amountDue = replaceTotalChargeFee - replaceAmountPaidToDate;
         int compareProjectNumber = projectConstructor.getProjectNumber();
         int personProjectNumber = personConstructor.getPersonProjectNumber();
+        String personProjectRole = personConstructor.getRole();
 
-        if ((amountDue > 0) && (personProjectNumber == compareProjectNumber )) {
+        if ((amountDue > 0) && (personProjectNumber == compareProjectNumber) && personProjectRole.equalsIgnoreCase("customer")) {
            try {
                FileWriter projectInvoice = new FileWriter(new File("src/LessonTwoHomeWork/Invoices", "project_" + projectConstructor.getProjectNumber() + "_invoice.txt"));
                projectInvoice.write(String.valueOf(projectConstructor));

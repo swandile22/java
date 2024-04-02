@@ -35,6 +35,10 @@ public class Person {
 
     }
 
+    public String getRole() {return this.role;}
+    public void setRole(String newRole) {
+        this.role = newRole;
+    }
     public String getPersonId() {
         return this.personId;
     }
