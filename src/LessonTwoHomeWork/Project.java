@@ -16,22 +16,16 @@ public class Project {
 
     private int ERFNumber;
 
-    private double totalChargeFee;
-
-    private double amountPaidToDate;
-
     private String projectDeadline;
 
 
     public Project(int projectNumber, String projectName, String buildingType, String projectAddress,
-                   int ERFNumber, double totalChargeFee, double amountPaidToDate, String projectDeadline) {
+                   int ERFNumber, String projectDeadline) {
         this.projectNumber = projectNumber;
         this.projectName = projectName;
         this.buildingType = buildingType;
         this.projectAddress = projectAddress;
         this.ERFNumber = ERFNumber;
-        this.totalChargeFee = totalChargeFee;
-        this.amountPaidToDate = amountPaidToDate;
         this.projectDeadline = projectDeadline;
     }
 
@@ -62,14 +56,6 @@ public class Project {
     public void setERFNumber(int ERFNumber) { this.ERFNumber = ERFNumber;}
 
 
-    public double getTotalChargeFee() { return totalChargeFee;}
-    public void setTotalChargeFee(double totalChargeFee) { this.totalChargeFee = totalChargeFee;}
-
-
-    public double getAmountPaidToDate() { return amountPaidToDate;}
-    public void setAmountPaidToDate(double amountPaidToDate) { this.amountPaidToDate = amountPaidToDate;}
-
-
     public String getProjectDeadline() { return projectDeadline;}
     public void setProjectDeadline(String projectDeadline) { this.projectDeadline = projectDeadline;}
 
@@ -83,8 +69,6 @@ public class Project {
         output += "\nBuilding Type:" + " " + buildingType;
         output += "\nProject Address:" + " " + projectAddress;
         output += "\nERF Number:" + " " + ERFNumber;
-        output += "\nTotal Charge Fee:" + " " + "R" + totalChargeFee;
-        output += "\nAmount Paid to Date:" + " " + "R" + amountPaidToDate;
         output += "\nProject Deadline:" + " " + projectDeadline;
         output += "\n***********************************";
         return output;
@@ -113,13 +97,9 @@ public class Project {
             String projectAddress = input.nextLine();
             System.out.print("ERF number: ");
             int ERFNumber = input.nextInt();
-            System.out.print("Total charge fee: ");
-            double totalChargeFee = input.nextDouble();
-            System.out.print("Amount paid to date: ");
-            double amountPaidToDate = input.nextDouble();
-            input.nextLine();
             System.out.print("Deadline: ");
             String projectDeadline = input.nextLine();
+            input.nextLine();
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
             String userInput = input.nextLine();
 
@@ -130,8 +110,6 @@ public class Project {
                         this.buildingType = buildingType;
                         this.projectAddress = projectAddress;
                         this.ERFNumber = ERFNumber;
-//                        this.totalChargeFee = totalChargeFee;
-//                        this.amountPaidToDate = amountPaidToDate;
                         this.projectDeadline = projectDeadline;
 
                 break;
@@ -159,11 +137,6 @@ public class Project {
 
     public void repERFNumber(int newERFNumber) {
         this.ERFNumber = newERFNumber;
-    }
-
-    public void repAmount(double newTotalChargeFee, double newAmountPaidToDate) {
-        this.totalChargeFee = newTotalChargeFee;
-        this.amountPaidToDate = newAmountPaidToDate;
     }
 
     public void repDeadline(String newDeadline) {

@@ -19,7 +19,12 @@ public class Person {
 
     private String physicalAddress;
 
-    public Person(String role, String personId, int personProjectNumber, String firstName, String lastName, String contactNumber, String emailAddress, String physicalAddress) {
+    private double totalChargeFee;
+
+    private double amountPaidToDate;
+
+
+    public Person(String role, String personId, int personProjectNumber, String firstName, String lastName, String contactNumber, String emailAddress, String physicalAddress, double totalChargeFee, double amountPaidToDate) {
         this.role = role;
         this.personId = personId;
         this.personProjectNumber = personProjectNumber;
@@ -28,6 +33,9 @@ public class Person {
         this.contactNumber = contactNumber;
         this.emailAddress = emailAddress;
         this.physicalAddress = physicalAddress;
+        this.totalChargeFee = totalChargeFee;
+        this.amountPaidToDate = amountPaidToDate;
+
 
     }
 
@@ -35,10 +43,14 @@ public class Person {
 
     }
 
-    public String getRole() {return this.role;}
+    public String getRole() {
+        return this.role;
+    }
+
     public void setRole(String newRole) {
         this.role = newRole;
     }
+
     public String getPersonId() {
         return this.personId;
     }
@@ -95,12 +107,29 @@ public class Person {
         this.physicalAddress = newPhysicalAddress;
     }
 
-    public Person personFunction() {
-    Scanner personInput = new Scanner(System.in);
+    public double getTotalChargeFee() {
+        return totalChargeFee;
+    }
 
-        System.out.println("please enter your details" +
+    public void setTotalChargeFee(double totalChargeFee) {
+        this.totalChargeFee = totalChargeFee;
+    }
+
+
+    public double getAmountPaidToDate() {
+        return amountPaidToDate;
+    }
+
+    public void setAmountPaidToDate(double amountPaidToDate) {
+        this.amountPaidToDate = amountPaidToDate;
+    }
+
+    public Person personFunction() {
+        Scanner personInput = new Scanner(System.in);
+
+        System.out.println("\nplease enter your details" +
                 " " + "Type " + "done" + " " + "to finish.");
-    Person matthew = null;
+        Person matthew = null;
 
         while (true) {
             System.out.print("Role: ");
@@ -127,6 +156,18 @@ public class Person {
             System.out.print("Physical Address: ");
             String physicalAddress = personInput.nextLine();
 
+            if (role.equalsIgnoreCase("customer")) {
+
+                System.out.print("Total charge fee: ");
+                double totalChargeFee = personInput.nextDouble();
+
+                System.out.print("Amount paid to date: ");
+                double amountPaidToDate = personInput.nextDouble();
+                personInput.nextLine();
+
+            }
+
+
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
             String personDone = personInput.nextLine();
 
@@ -149,7 +190,10 @@ public class Person {
     }
 
 
-
+    public void repAmount(double newTotalChargeFee, double newAmountPaidToDate) {
+        this.totalChargeFee = newTotalChargeFee;
+        this.amountPaidToDate = newAmountPaidToDate;
+    }
 
     @Override
     public String toString() {
