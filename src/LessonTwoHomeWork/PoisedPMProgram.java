@@ -21,10 +21,10 @@ public class PoisedPMProgram {
         personConstructor.personFunction();
 
         Person personConstructor2 = new Person();
-        personConstructor.personFunction();
+        personConstructor2.personFunction();
 
         Person personConstructor3 = new Person();
-        personConstructor.personFunction();
+        personConstructor3.personFunction();
 
 //      Updates Total Charge Fee and Amount Paid to date
         Scanner replace = new Scanner(System.in);
@@ -49,17 +49,19 @@ public class PoisedPMProgram {
         int personProjectNumber = personConstructor.getPersonProjectNumber();
         int person2ProjectNumber = personConstructor2.getPersonProjectNumber();
         int person3ProjectNumber = personConstructor3.getPersonProjectNumber();
-        String personProjectRole = personConstructor.getRole();
+        String personProjectRole = personConstructor3.getRole();
 
         if ((amountDue > 0) &&
-                (personProjectNumber == compareProjectNumber)
-                && (person2ProjectNumber == compareProjectNumber)
-                && (person3ProjectNumber == compareProjectNumber)
-                && personProjectRole.equalsIgnoreCase("customer")) {
+                (personProjectNumber == compareProjectNumber) &&
+                (person2ProjectNumber == compareProjectNumber) &&
+                (person3ProjectNumber == compareProjectNumber) &&
+                (personProjectRole.equalsIgnoreCase("customer"))) {
            try {
                FileWriter projectInvoice = new FileWriter(new File("src/LessonTwoHomeWork/Invoices", "project_" + projectConstructor.getProjectNumber() + "_invoice.txt"));
                projectInvoice.write(String.valueOf(projectConstructor));
                projectInvoice.write(String.valueOf(personConstructor));
+               projectInvoice.write(String.valueOf(personConstructor2));
+               projectInvoice.write(String.valueOf(personConstructor3));
                projectInvoice.write(" The amount due is: R"+ amountDue);
                projectInvoice.close();
                System.out.println("Your invoice has been created");
