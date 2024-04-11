@@ -1,7 +1,5 @@
 package LessonTwoHomeWork;
 
-
-
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -25,6 +23,8 @@ public class PoisedPMProgram {
 
         Person personConstructor3 = new Person();
         personConstructor3.personFunction();
+
+
 
 //      Updates Total Charge Fee and Amount Paid to date
         Scanner replace = new Scanner(System.in);
@@ -74,8 +74,5 @@ public class PoisedPMProgram {
         else if (amountDue == 0) {
             System.out.println("Project is finalised");
         }
-
-
-
         }
         }

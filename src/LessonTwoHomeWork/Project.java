@@ -1,7 +1,7 @@
 package LessonTwoHomeWork;
 
-
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Project {
@@ -97,7 +97,7 @@ public class Project {
             String projectAddress = input.nextLine();
             System.out.print("ERF number: ");
             int ERFNumber = input.nextInt();
-            System.out.print("Deadline: ");
+            System.out.print("Deadline(yyyy-MM-dd): ");
             String projectDeadline = input.nextLine();
             input.nextLine();
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
@@ -118,6 +118,7 @@ public class Project {
 
         return clearWater;
     }
+
 
     public void repProjectNumber(int newProjectNumber) {
         this.projectNumber = newProjectNumber;
@@ -146,6 +147,13 @@ public class Project {
     public void addProjectName(String projectName) {
         this.projectName = "House";
     }
+
+
+
+    public void dateFormat() {
+     LocalDate userDate = LocalDate.parse(projectDeadline, DateTimeFormatter.ISO_DATE);
+    }
+
 
 
 }

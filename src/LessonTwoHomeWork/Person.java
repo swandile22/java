@@ -132,7 +132,7 @@ public class Person {
         Person matthew = null;
 
         while (true) {
-            System.out.print("Role: ");
+            System.out.print("Role(Architect/Contractor/Customer): ");
             String role = personInput.nextLine();
             System.out.print(role + " " + "ID: ");
             String personId = personInput.nextLine();
