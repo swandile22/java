@@ -209,7 +209,5 @@ public class Person {
         personOutput += "\n*********************************";
         return personOutput;
     }
-
-
 }
 

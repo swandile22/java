@@ -13,6 +13,7 @@ public class PoisedPMProgram {
 
         Project projectConstructor = new Project();
         projectConstructor.projectFunction();
+        projectConstructor.dateFormat();
         System.out.println("Your project information has been stored");
 
         Person personConstructor = new Person();
@@ -23,7 +24,6 @@ public class PoisedPMProgram {
 
         Person personConstructor3 = new Person();
         personConstructor3.personFunction();
-
 
 
 //      Updates Total Charge Fee and Amount Paid to date

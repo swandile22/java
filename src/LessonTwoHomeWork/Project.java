@@ -97,9 +97,9 @@ public class Project {
             String projectAddress = input.nextLine();
             System.out.print("ERF number: ");
             int ERFNumber = input.nextInt();
+            input.nextLine();
             System.out.print("Deadline(yyyy-MM-dd): ");
             String projectDeadline = input.nextLine();
-            input.nextLine();
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
             String userInput = input.nextLine();
 
@@ -151,9 +151,11 @@ public class Project {
 
 
     public void dateFormat() {
-     LocalDate userDate = LocalDate.parse(projectDeadline, DateTimeFormatter.ISO_DATE);
+    LocalDate currentDate = LocalDate.now();
+    LocalDate userDate = LocalDate.parse(projectDeadline, DateTimeFormatter.ISO_DATE);
+
+    if (userDate.isBefore(currentDate)) {
+        System.out.println("*Project is past due date*");
     }
-
-
-
+    }
 }
