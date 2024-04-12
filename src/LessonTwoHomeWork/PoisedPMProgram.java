@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class PoisedPMProgram {
 
     public static void main(String[] args) {
