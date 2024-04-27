@@ -34,31 +34,59 @@ public class Project {
     }
 
 
-    public int getProjectNumber() { return projectNumber;}
-    public void setProjectNumber(int projectNumber) { this.projectNumber = projectNumber;}
+    public int getProjectNumber() {
+        return projectNumber;
+    }
+
+    public void setProjectNumber(int projectNumber) {
+        this.projectNumber = projectNumber;
+    }
 
 
-    public String getProjectName() { return projectName;}
-    public String setProjectName(String projectName) { this.projectName = projectName;
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public String setProjectName(String projectName) {
+        this.projectName = projectName;
         return projectName;
     }
 
 
-    public String getBuildingType() { return buildingType;}
-    public void setBuildingType(String buildingType) { this.buildingType = buildingType;}
+    public String getBuildingType() {
+        return buildingType;
+    }
+
+    public void setBuildingType(String buildingType) {
+        this.buildingType = buildingType;
+    }
 
 
-    public String getProjectAddress() { return projectAddress;}
-    public void setProjectAddress(String projectAddress) { this.projectAddress = projectAddress;}
+    public String getProjectAddress() {
+        return projectAddress;
+    }
+
+    public void setProjectAddress(String projectAddress) {
+        this.projectAddress = projectAddress;
+    }
 
 
-    public int getERFNumber() { return ERFNumber;}
-    public void setERFNumber(int ERFNumber) { this.ERFNumber = ERFNumber;}
+    public int getERFNumber() {
+        return ERFNumber;
+    }
+
+    public void setERFNumber(int ERFNumber) {
+        this.ERFNumber = ERFNumber;
+    }
 
 
-    public String getProjectDeadline() { return projectDeadline;}
-    public void setProjectDeadline(String projectDeadline) { this.projectDeadline = projectDeadline;}
+    public String getProjectDeadline() {
+        return projectDeadline;
+    }
 
+    public void setProjectDeadline(String projectDeadline) {
+        this.projectDeadline = projectDeadline;
+    }
 
 
     @Override
@@ -82,41 +110,42 @@ public class Project {
         System.out.println("please enter the following project information," +
                 " " + "Type " + "done" + " " + "to finish.");
 
-        Project clearWater = null;
-
         while (true) {
 
             System.out.print("Project number: ");
             int projectNumber = input.nextInt();
             input.nextLine();
+
             System.out.print("Project name: ");
             String projectName = input.nextLine();
+
             System.out.print("Building type: ");
             String buildingType = input.nextLine();
+
             System.out.print("Address: ");
             String projectAddress = input.nextLine();
+
             System.out.print("ERF number: ");
             int ERFNumber = input.nextInt();
             input.nextLine();
+
             System.out.print("Deadline(yyyy-MM-dd): ");
             String projectDeadline = input.nextLine();
+
             System.out.print("Enter 'done' to finish or press Enter to continue: ");
             String userInput = input.nextLine();
 
-
             if (userInput.equalsIgnoreCase("done")) {
-               this.projectNumber = projectNumber;
-                        this.projectName = projectName;
-                        this.buildingType = buildingType;
-                        this.projectAddress = projectAddress;
-                        this.ERFNumber = ERFNumber;
-                        this.projectDeadline = projectDeadline;
+                this.projectNumber = projectNumber;
+                this.projectName = projectName;
+                this.buildingType = buildingType;
+                this.projectAddress = projectAddress;
+                this.ERFNumber = ERFNumber;
+                this.projectDeadline = projectDeadline;
 
-                break;
+                return this;
             }
         }
-
-        return clearWater;
     }
 
 
@@ -149,13 +178,12 @@ public class Project {
     }
 
 
-
     public void dateFormat() {
-    LocalDate currentDate = LocalDate.now();
-    LocalDate userDate = LocalDate.parse(projectDeadline, DateTimeFormatter.ISO_DATE);
+        LocalDate currentDate = LocalDate.now();
+        LocalDate userDate = LocalDate.parse(projectDeadline, DateTimeFormatter.ISO_DATE);
 
-    if (userDate.isBefore(currentDate)) {
-        System.out.println("*Project is past due date*");
-    }
+        if (userDate.isBefore(currentDate)) {
+            System.out.println("*Project is past due date*");
+        }
     }
 }
